@@ -1,0 +1,31 @@
+<aside
+  class=" bg-white transform transition-transform duration-300 ease-in-out z-50"
+  [class.translate-x-0]="open"
+  [class.translate-x-full]="!open"
+>
+  <div class="drawer-header flex justify-between items-center border-b pb-2 mb-8">
+    <h2 class="text-xl font-bold text-gray-800">{{ title }}</h2>
+    <div
+      class="text-gray-600 group hover:text-gray-900 transition justify-center rounded-full border-2 border-green-200 hover:border-green-500 cursor-pointer"
+      (click)="close()"
+    >
+      <i class="fas fa-xmark text-lg text-gray-600 group-hover:text-green-500 p-1 justify-center "></i>
+    </div>
+  </div>
+
+@if (data) {
+  <div class="drawer-content space-y-2 overflow-y-auto max-h-[80vh] text-[13px] text-gray-700">
+    <div *ngFor="let item of data | keyvalue : keepOrder" class="flex justify-between border-b border-gray-100 pb-1">
+      <span class="font-medium text-gray-800">{{ item.key }} :</span>
+      <span
+        class="text-gray-700 text-right"
+        [class.text-green-600]="item.key === 'Statut' && item.value === 'Activer'"
+        [class.text-red-600]="item.key === 'Statut' && item.value === 'Désactiver'"
+      >
+        {{ item.value }}
+      </span>
+    </div>
+  </div>
+}
+
+</aside>

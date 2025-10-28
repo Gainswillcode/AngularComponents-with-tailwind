@@ -19,19 +19,6 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
         [ngClass]="inputClasses"
         (input)="onInput($event)"
       />
-      <input
-        [type]="type"
-        [id]="id"
-        [name]="name"
-        [placeholder]="placeholder"
-        [value]="value"
-        [min]="min"
-        [max]="max"
-        [step]="step"
-        [disabled]="disabled"
-        [ngClass]="inputClasses"
-        (input)="onInput($event)"
-      />
 
       @if (hint) {
       <p class="mt-1.5 text-xs"

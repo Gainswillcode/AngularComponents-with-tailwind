@@ -1,0 +1,23 @@
+.drawer-container {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  transition: all 0.3s ease-in-out;
+  border-left: 1px solid #e5e7eb;
+  z-index: 50;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+
+  &.open {
+    transform: translateX(0);
+  }
+
+  &:not(.open) {
+    transform: translateX(100%);
+  }
+}
