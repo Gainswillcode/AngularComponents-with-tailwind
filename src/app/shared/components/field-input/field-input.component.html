@@ -1,0 +1,27 @@
+<div class="filter-field">
+  <label class="text-gray-700 text-sx font-medium">{{ label }}</label>
+  <!-- Champ select -->
+  <select *ngIf="type === 'select'"
+        class="w-full rounded-full border border-gray-200 bg-gray-50 px-4 py-1 pr-10 text-sm md:text-sm
+               focus:outline-none focus:ring-2 focus:ring-brand-500"
+        [(ngModel)]="value"
+        (ngModelChange)="valueChange.emit($event)">
+
+  <option [ngValue]="''">Tous</option>
+
+  <option *ngFor="let opt of options"
+          [ngValue]="opt.value">
+    {{ opt.label }}
+  </option>
+
+</select>
+
+
+  <!-- Champ texte -->
+  <input *ngIf="type === 'text'"
+         type="text"
+         class="w-full rounded-full border border-gray-200 bg-gray-50 px-4 py-1 pr-10 text-sm md:text-sm focus:outline-none focus:ring-2 focus:ring-brand-500"
+         [placeholder]="placeholder"
+         [ngModel]="value"
+         (ngModelChange)="valueChange.emit($event)" />
+</div>

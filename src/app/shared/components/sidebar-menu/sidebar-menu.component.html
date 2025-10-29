@@ -1,0 +1,65 @@
+<!-- <aside class="hidden lg:flex w-52 text-sm h-full border-r border-gray-200 bg-lime-50/25 flex-shrink-0 flex-col overflow-auto">
+  <div class="pt-5 flex items-center justify-center">
+    <img src="logo/easyHerd.png" alt="Logo" class="h-16 object-contain" />
+  </div>
+
+  <nav class="flex flex-col pt- p-3 py-2 text-gray-700 justify-center">
+    <ng-container *ngFor="let item of menu()">
+      <a [routerLink]="item.href" routerLinkActive="active-link"
+        class="group group-hover:text-green-500 flex items-center space-x-3  px-3 py-2 hover:bg-[#f4fcec] transition border-b border-gray-200 mb-1 pb-1">
+        <img [src]="item.icon" class="w-[16px]">
+        <span class="group-hover:text-green-500">{{ item.title }}</span>
+      </a>
+    </ng-container>
+
+  </nav>
+</aside> -->
+
+<aside
+  class="hidden lg:flex text-sm h-full border-r border-gray-200 bg-lime-50/25 flex-shrink-0 flex-col overflow-auto transition-all duration-300 ease-in-out"
+  [class.w-52]="!sidebarService.collapsed()"
+  [class.w-16]="sidebarService.collapsed()">
+
+  <!-- Logo -->
+  <div class="pt-5 flex items-center justify-center transition-all duration-300">
+    <img
+      src="logo/easyHerd.png"
+      alt="Logo"
+      class="object-contain transition-all duration-300"
+      [class.h-16]="!sidebarService.collapsed()"
+      [class.h-10]="sidebarService.collapsed()" />
+  </div>
+
+  <!-- Menu -->
+  <nav class="flex flex-col p-3 py-2 text-gray-700 justify-center relative">
+    <ng-container *ngFor="let item of menu()">
+      <a
+        [routerLink]="item.href"
+        routerLinkActive="active-link"
+        class="group relative flex items-center space-x-3 px-3 py-2 hover:bg-[#f4fcec] border-b border-gray-200 mb-1 pb-1 transition-all duration-200 ease-in-out">
+
+        <!-- Icône -->
+        <img
+          [src]="item.icon"
+          class="transition-all duration-300 ease-in-out"
+          [class.w-4]="!sidebarService.collapsed()"
+          [class.w-7]="sidebarService.collapsed()" />
+
+        <!-- Titre -->
+        <span
+          class="truncate transition-opacity duration-300 ease-in-out"
+          [class.opacity-0]="sidebarService.collapsed()"
+          [class.hidden]="sidebarService.collapsed()"
+          >{{ item.title | translate }}</span>
+
+        <!-- Tooltip (affiché seulement si collapsed) -->
+        <!-- <span
+          *ngIf="sidebarService.collapsed()"
+          class="absolute z-99 -right-10 top-1/2 -translate-y-1/2 ml-2 px-2 py-1 bg-gray-700 text-white text-xs rounded opacity-0 group-hover:opacity-100 whitespace-nowrap pointer-events-none transition-opacity duration-300">
+          {{ item.title }}
+        </span> -->
+
+      </a>
+    </ng-container>
+  </nav>
+</aside>

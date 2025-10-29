@@ -1,0 +1,15 @@
+.active-link {
+  background-color: #f4fcec; /* ton vert principal */
+  color: #16a34a  !important;    /* texte et icônes en blanc */
+  font-weight: 400;
+}
+
+.active-link i {
+  color: #16a34a  !important;
+}
+.group:hover i {
+  color: #16a34a  !important;
+}
+.group:hover span {
+  color: #16a34a  !important;
+}
