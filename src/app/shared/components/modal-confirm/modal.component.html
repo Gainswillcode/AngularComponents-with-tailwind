@@ -1,0 +1,20 @@
+
+  <div *ngIf="visible" class="fixed inset-0 z-50 flex items-center justify-center">
+
+  <!-- Backdrop with fade animation -->
+  <div class="absolute inset-0 bg-gray-900/40 backdrop-blur-sm opacity-100 transition-opacity duration-300"
+       (click)="onBackdropClick()">
+  </div>
+
+  <!-- Modal body: fade + scale animation -->
+  <div class="relative bg-white rounded-lg shadow-xl w-full max-w-lg p-6 transform transition-all duration-300 opacity-100 scale-100">
+
+    <ng-content select="[modal-body]"></ng-content>
+
+    <div class="mt-6 flex justify-end gap-3">
+      <ng-content select="[modal-action]"></ng-content>
+    </div>
+
+  </div>
+
+</div>
