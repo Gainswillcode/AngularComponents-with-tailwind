@@ -1,0 +1,28 @@
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto py-10 text-white">
+
+  @for (skill of skills; track skill.name) {
+
+    <div class="dark:bg-slate-800 bg-slate-100/40 bg-opacity-50  p-5 rounded-xl border border-gray-700 relative"
+    appObserveVisibility
+    (visible)="onVisible(skill.name, $event)"
+  >
+    <div class="flex items-center justify-between mb-4">
+      <div class="flex items-center gap-3">
+        <img [src]="skill.icon" class="w-10 h-10 tilt-img" />
+        <span class="text-lg font-medium dark:text-slate-100 text-slate-800">{{ skill.name | translate}}</span>
+      </div>
+      <span class="text-sm dark:text-slate-100 text-slate-800 px-3 py-1 border border-slate-800 dark:border-white rounded-full">
+        {{ skill.percent }}%
+      </span>
+    </div>
+
+    <div class="h-1 w-full dark:bg-gray-700 bg-gray-200 rounded-full">
+      <div
+        class="h-1 dark:bg-white bg-[#FFAE00] rounded-full transition-all duration-[1500ms]"
+        [style.width.%]="skill.visible ? skill.percent : 0"
+      ></div>
+    </div>
+  </div>
+
+  }
+</div>

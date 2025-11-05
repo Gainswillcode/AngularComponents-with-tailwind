@@ -1,0 +1,46 @@
+<section class="px-6 pb-20 dark:text-white text-slate-800 grid md:grid-cols-2 gap-10">
+  <div class="space-y-10">
+    <h1 class="lg:text-5xl text-4xl font-bold font-montserrat text-wrap lg:leading-[4rem]">
+    {{'CONTACT.text1' | translate}} </h1>
+    <p class=" text-slate-700 dark:text-slate-100 font-sora">{{'CONTACT.text2' | translate}}</p>
+
+    <div class="flex items-center space-x-5 ">
+      <i class="fa fa-phone text-3xl text-[#FFAE00]" aria-hidden="true"></i>
+
+      <div class="flex flex-col">
+        <a href="tel:+237656151009" class="text-2xl font-normal font-montserrat hover:text-[#FFAE00] dark:text-slate-100 text-slate-800">+237 656 15 10 09</a>
+        <a href="tel:+237620222192" class="text-2xl font-normal font-montserrat hover:text-[#FFAE00] dark:text-slate-100 text-slate-800">+237 620 22 21 92</a>
+      </div>
+    </div>
+
+    <div class="flex gap-4 text-sm font-sora">
+      <a href="https://www.facebook.com/wilfried.mocheye.1">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="https://www.linkedin.com/in/gains-wilfried-doumbissi-mocheye-02a0b4236/">LinkedIn</a>
+    </div>
+  </div>
+
+  <form [formGroup]="contactForm" (ngSubmit)="sendEmail()" class="space-y-4 ">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <input type="text" formControlName="name" placeholder="{{'PLACEHOLDER.placeholder1' | translate}}" required=""
+        class="p-3 border border-slate-400 rounded bg-transparent dark:text-white text-slate-800 font-normal hover:border-[#FFAE00] focus:border focus:border-[#FFAE00]" />
+
+      <input type="email" formControlName="email"  placeholder="{{'PLACEHOLDER.placeholder2' | translate}}" required=""
+        class="p-3 border border-slate-400 rounded bg-transparent dark:text-white text-slate-800 font-normal hover:border-[#FFAE00] focus:border focus:border-[#FFAE00]" />
+
+    </div>
+    <input type="text" formControlName="subject"  placeholder="{{'PLACEHOLDER.placeholder3' | translate}}" required=""
+      class="p-3 border border-slate-400 rounded w-full bg-transparent dark:text-white text-slate-800 font-normal hover:border-[#FFAE00] focus:border-[#FFAE00]" />
+    <textarea rows="5" formControlName="message"  placeholder="{{'PLACEHOLDER.placeholder4' | translate}}" required=""
+      class="p-3 border border-slate-400 rounded w-full bg-transparent dark:text-white text-slate-800 font-normal hover:border-[#FFAE00] focus:border-[#FFAE00]"></textarea>
+
+    <button type="submit" [disabled]="loading || contactForm.invalid"
+      class="px-8 py-4 w-full dark:text-slate-100 text-slate-800 border border-slate-500 rounded font-semibold uppercase
+        disabled:opacity-70" [ngClass]="{'hover:duration-700 hover:transform hover:ease-in-out hover:bg-[#FFAE00]': contactForm.valid}">
+      {{ loading ? 'Sending...' : 'Send a message' }}
+    </button>
+
+    <p *ngIf="successMessage" class="text-green-400">{{ successMessage }}</p>
+    <p *ngIf="errorMessage" class="text-red-500">{{ errorMessage }}</p>
+  </form>
+</section>

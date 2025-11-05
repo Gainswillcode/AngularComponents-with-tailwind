@@ -1,0 +1,108 @@
+<header id="MainHeader" class="sticky top-0 z-50 py-5 h-20 dark:.bg-orange-overlay ">
+
+  <div class="header-container">
+    <div class="relative flex mx-4 md:mx-8 lg:mx-32 justify-between items-center">
+
+      <!-- Logo -->
+      <div class="cursor-pointer flex items-center" [routerLink]="['']" routerLinkActive="router-link-active">
+        <p class="text-xl lg:text-3xl italic mr-1 font-[900] text-gray-800 dark:text-white font-figtree">WilFried</p>
+         <img src="logo.png" width="24" height="24">
+      </div>
+
+      <!-- Burger button (mobile only) -->
+      <button class="lg:hidden" (click)="toggleMenu()">
+        <i class="fas fa-list fa-lg fa-fw text-[#FFAE00]"></i>
+      </button>
+
+      <!-- Navigation desktop -->
+      <nav class="hidden lg:block">
+        <ul class="flex items-center ">
+          @for (item of menus; track item.id) {
+            <a
+              class=" lg:px-3 dark:text-white text-slate-800 font-semibold font-montserrat transition-all duration-300 ease-in-out hover:text-[#FFAE00] hover:-translate-y-1 hover:scale-105"
+              (click)="scrollToSection(item.id)"
+              [ngClass]="{ 'text-[#FFAE00]': activeSection === item.id }"
+              [routerLink]="item.id">
+              {{ item.titre | translate }}
+            </a>
+          }
+        </ul>
+      </nav>
+
+      <!-- Options (theme, contact, langues) -->
+      <div class="hidden lg:flex items-center space-x-6">
+
+        <!-- Theme -->
+        <label class="relative inline-flex items-center cursor-pointer">
+          <input type="checkbox" (change)="toggleTheme()" [checked]="isDarkMode" class="sr-only peer">
+          <div class="w-16 h-8 bg-[#FFAE00] peer-focus:outline-none rounded-full peer dark:bg-gray-800 peer-checked:bg-[#FFAE00] transition-colors"></div>
+          <div class="absolute left-1 top-1 w-6 h-6 bg-white rounded-full transition-transform peer-checked:translate-x-8"></div>
+          <span class="ml-3 text-sm text-gray-700 dark:text-white">
+            @if (isDarkMode) {
+              <i class="fas fa-moon"></i>
+            } @else {
+              <i class="fas fa-sun"></i>
+            }
+          </span>
+        </label>
+
+
+        <!-- Langues -->
+        <div class="flex space-x-2 items-center">
+          <button (click)="switchLanguage('en')" class="flex items-center text-sm font-medium text-slate-500 hover:bg-slate-100 p-2 rounded">
+            <span>En</span>
+            <img src="images/flags/en.svg" class="w-5 h-5 ml-1" />
+          </button>
+          <button (click)="switchLanguage('fr')" class="flex items-center text-sm font-medium text-slate-500 hover:bg-slate-100 p-2 rounded">
+            <span>Fr</span>
+            <img src="images/flags/fr.svg" class="w-5 h-5 ml-1" />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Menu mobile -->
+  <div *ngIf="menuOpen" id="MainHeader" class="lg:hidden bg-white dark:bg-slate-800/75 dark:backdrop-blur-lg shadow-md w-full absolute top-full left-0 z-40">
+    <ul class="flex flex-col items-start p-4 space-y-2">
+      @for (item of menus; track item.id) {
+        <a
+          class="text-slate-800 dark:text-white font-montserrat text-md w-full py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-700/60"
+          (click)="scrollToSection(item.id); toggleMenu()"
+          [routerLink]="item.id"
+          [ngClass]="{ 'text-[#FFAE00]': activeSection === item.id }">
+          {{ item.titre | translate }}
+        </a>
+      }
+
+      <!-- Theme (mobile) -->
+      <div class="flex items-center pt-4">
+        <label class="relative inline-flex items-center cursor-pointer">
+          <input type="checkbox" (change)="toggleTheme()" [checked]="isDarkMode" class="sr-only peer">
+          <div class="w-12 h-6 bg-gray-400 peer-focus:outline-none rounded-full peer dark:bg-gray-600 peer-checked:bg-yellow-400 transition-colors"></div>
+          <div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform peer-checked:translate-x-6"></div>
+        </label>
+        <span class="ml-3 text-sm text-gray-700 dark:text-white">
+          @if (isDarkMode) {
+            <i class="fas fa-moon"></i>
+          } @else {
+            <i class="fas fa-sun"></i>
+          }
+        </span>
+      </div>
+
+      <!-- Langues (mobile) -->
+      <div class="flex space-x-2 py-12">
+        <button (click)="switchLanguage('en')"
+        class="p-2 flex flex-row items-center font-montserrat  border-slate-100 text-sm font-medium text-slate-500 hover:bg-slate-100 focus:bg-slate-100 focus:outline-none">
+          <span>En</span>
+          <img src="images/flags/en.svg" class="w-5 h-5 ml-1" />
+        </button>
+        <button (click)="switchLanguage('fr')" class="p-2 flex flex-row items-center font-montserrat  border-slate-100 text-sm font-medium text-slate-500 hover:bg-slate-100 focus:bg-slate-100 focus:outline-none">
+          <span>Fr</span>
+          <img src="images/flags/fr.svg" class="w-5 h-5 ml-1" />
+        </button>
+      </div>
+    </ul>
+  </div>
+</header>
