@@ -1,0 +1,320 @@
+{
+
+  "Login":{
+    "title": "Se connecter",
+    "username":"Nom d'utilisateur/Addresse email",
+    "password":"Mot de passe",
+    "forgetPassword": "Mot de passe oublié?",
+    "button":"Connexion"
+
+  },
+
+  "ForgetPasswordPage":{
+    "title": "Mot de passe oublié?",
+     "emailfield" :{
+      "label": "Addresse email",
+      "placeholder": "Entrer votre email"
+    },
+    "button":"valider",
+    "action":"Retour à la connexion"
+  },
+
+  "ResetPasswordPage":{
+    "title": "Nouveau mot de passe",
+     "newpasswword" :{
+      "label": "Mot de passe",
+      "placeholder": "Entrer votre mot de passe"
+    },
+     "confirmpasswword" :{
+      "label": "Confirmer le mot de passe",
+      "placeholder": "Confirmer le mot de passe saisi"
+    },
+    "button":"Modifier le mot de passe",
+    "loading":"Modification...",
+    "action":"Retour à la connexion"
+  },
+
+  "ConfirmEmailPage": {
+    "title": "Confirmez votre email",
+    "subtitle": "Nous avons envoyé un code de vérification à",
+    "form": {
+      "otp": {
+        "label": "Code",
+        "placeholder": "Saisissez le code"
+      }
+    },
+    "button": {
+      "normal": "Confirmer le code",
+      "loading": "Confirmation..."
+    },
+    "resend": {
+      "text": "Vous n'avez pas reçu le code ?",
+      "action": "Renvoyer"
+    },
+    "back": {
+      "text": "Retour à la connexion"
+    }
+  },
+
+  "errors":{
+    "required": "Ce champs est requis",
+    "size3": "Minimum 3 caractères",
+    "size4": "Minimum 4 caractères",
+    "passwordNotmatched":"Les mots de passe ne correspondent pas."
+  },
+
+  "generalButtons":{
+    "pdf":"PDF",
+    "csv":"CSV",
+    "clearFilter":"réinitialiser"
+  },
+
+  "menu": {
+  "dashboard": "Dashboard",
+  "company": "Compagnies",
+  "institut": "Institutions",
+  "ranch": "Ranchs",
+  "camp": "Campements",
+  "troupeau": "Troupeaux",
+  "cow": "Bovins"
+},
+
+"CompagniePage": {
+  "title": "Liste des compagnies d'élevage",
+  "header-right": {
+    "search": {
+      "placeholder": "Rechercher une compagnie..."
+    },
+    "buttons": {
+      "addCompany": "Ajouter une compagnie"
+    }
+  },
+  "filters": {
+    "country": "Pays",
+    "city": "Ville/Région",
+    "statut": "Statut"
+  },
+  "table": {
+    "columns": {
+      "name": "Nom",
+      "legalStatus": "Statut",
+      "sector": "Secteur d'activité",
+      "email": "Email",
+      "phone": "Téléphone",
+      "country": "Pays",
+      "city": "Ville",
+      "address": "Adresse",
+      "ranches": "Ranchs",
+      "workers": "Employés",
+      "actions": {
+        "text": "Actions",
+        "titleActions": {
+          "action1": "Désactiver la compagnie",
+          "action2": "Activer la compagnie"
+        }
+      }
+    }
+  },
+   "modalDesable": {
+  "title": "Désactivation de la compagnie {{companyName}}",
+  "message": "Confirmez-vous cette action ?",
+  "buttons": {
+    "cancel": "Annuler",
+    "confirm": "Confirmer"
+  }
+},
+"modalActivation": {
+  "title": "Activation de la compagnie {{companyName}}",
+  "message": "Confirmez-vous cette action ?",
+  "buttons": {
+    "cancel": "Annuler",
+    "confirm": "Confirmer"
+  }
+},
+"drawer": {
+    "title": "Détails de la compagnie",
+    "fields": {
+      "name": "Nom",
+      "identificationNumber": "N° Identification",
+      "taxNumber": "N° contribuable",
+      "legalStatus": "Statut légal",
+      "sector": "Secteur",
+      "email": "Email",
+      "phone": "Téléphone",
+      "country": "Pays",
+      "city": "Ville / Région",
+      "addressLine1": "Adresse",
+      "website": "Site web",
+      "createdAt": "Créé le",
+      "updatedAt": "Mis à jour le",
+      "active": "Statut"
+    },
+    "values": {
+      "notProvided": "Non renseigné",
+      "active": "Activée",
+      "inactive": "Désactivée"
+    }
+  }
+
+},
+
+"InstitutionPage": {
+  "title": "Liste des institutions",
+  "header-right": {
+    "search": {
+      "placeholder": "Rechercher une institution..."
+    },
+    "buttons": {
+      "addInstitution": "Ajouter une institution"
+    }
+  },
+  "filters": {
+    "type": "Type d'institution",
+    "country": "Pays",
+    "city": "Ville/Région",
+    "status": "Statut"
+  },
+  "table": {
+    "columns": {
+      "name": "Nom",
+      "email": "Email",
+      "phone": "Téléphone",
+      "type": "Type",
+      "representative": "Représentant",
+      "country": "Pays",
+      "city": "Ville",
+      "actions": {
+        "text": "Actions",
+        "titleActions": {
+          "action1": "Désactiver l'institution",
+          "action2": "Activer l'institution"
+        }
+      }
+    }
+  },
+  "modalDisable": {
+    "title": "Désactivation de l'institution {{institutionName}}",
+    "message": "Confirmez-vous cette action ?",
+    "buttons": {
+      "cancel": "Annuler",
+      "confirm": "Confirmer"
+    }
+  },
+  "modalActivation": {
+    "title": "Activation de l'institution {{institutionName}}",
+    "message": "Confirmez-vous cette action ?",
+    "buttons": {
+      "cancel": "Annuler",
+      "confirm": "Confirmer"
+    }
+  },
+  "drawer": {
+    "title": "Détails de l'institution",
+     "fields": {
+      "name": "Nom",
+      "registrationNumber": "N° Immatriculation",
+      "type": "Type",
+      "email": "Email",
+      "phone": "Téléphone",
+      "country": "Pays",
+      "city": "Ville / Région",
+      "address": "Adresse",
+      "representative": "Représentant",
+      "representativeEmail": "Email représentant",
+      "representativePhone": "Tel représentant",
+      "website": "Site web",
+      "createdAt": "Créé le",
+      "updatedAt": "Mis à jour le",
+      "active": "Statut"
+    },
+    "values": {
+      "notProvided": "Non renseigné",
+      "active": "Activée",
+      "inactive": "Désactivée"
+    }
+  }
+},
+"RanchPage": {
+  "title": "Liste des ranchs",
+  "header-right": {
+    "search": {
+      "placeholder": "Rechercher un ranch..."
+    },
+    "buttons": {
+      "addRanch": "Ajouter un ranch"
+    }
+  },
+  "filters": {
+    "company": "Entreprise associée",
+    "country": "Pays",
+    "city": "Ville",
+    "status": "Statut"
+  },
+  "table": {
+    "columns": {
+      "reference": "Référence",
+      "name": "Nom",
+      "location": "Localisation",
+      "area": "Superficie (Ha)",
+      "phone": "Téléphone",
+      "longitude": "Longitude",
+      "latitude": "Latitude",
+      "city": "Ville",
+      "country": "Pays",
+      "actions": {
+        "text": "Actions",
+        "titleActions": {
+          "action1": "Désactiver le ranch",
+          "action2": "Activer le ranch"
+        }
+      }
+    }
+  },
+  "modalDisable": {
+    "title": "Désactivation du ranch {{ranchName}}",
+    "message": "Confirmez-vous cette action ?",
+    "buttons": {
+      "cancel": "Annuler",
+      "confirm": "Confirmer"
+    }
+  },
+  "modalActivation": {
+    "title": "Activation du ranch {{ranchName}}",
+    "message": "Confirmez-vous cette action ?",
+    "buttons": {
+      "cancel": "Annuler",
+      "confirm": "Confirmer"
+    }
+  },
+  "drawer": {
+    "title": "Détails du ranch",
+    "fields": {
+      "name": "Nom",
+      "reference": "Référence",
+      "identificationNumber": "N° Identification",
+      "phone": "Téléphone",
+      "country": "Pays",
+      "city": "Ville",
+      "address": "Adresse",
+      "description": "Description",
+      "longitude": "Longitude",
+      "latitude": "Latitude",
+      "company": "Entreprise associée",
+      "createdAt": "Créé le",
+      "updatedAt": "Mis à jour le",
+      "active": "Statut"
+    },
+    "values": {
+      "notProvided": "Non renseigné",
+      "active": "Activé",
+      "inactive": "Désactivé",
+      "noDescription":"Aucune description disponible",
+      "undefined":"Indéfini"
+    }
+  }
+}
+
+
+
+
+}
